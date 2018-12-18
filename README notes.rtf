@@ -16,10 +16,60 @@
 \i0\b\fs20 \cf0 \'97 
 \b0\fs24 VIDEO starts properly, but not stopping
 \b \
+
+\b0 \
+http://imakewebthings.com/waypoints/shortcuts/inview/
+\b \
+
+\b0 and \
+player.js
+\b \
+\
+\
+
+\b0 see: \
+https://stackoverflow.com/questions/20791374/jquery-check-if-element-is-visible-in-viewport
+\b \
+\
+
+\b0 if ($('#element').visible(true)) \{\
+    // The element is visible, do something\
+\} else \{\
+    // The element is NOT visible, do something else\
+\}\
+
+\b \
+
+\b0 need something like this (not working):\
+<script>\
+var vimeo_player = new Vimeo.Player('handstick');\
+\
+if ($(vimeo_player).visible()) \{\
+     vimeo_player.play();\
+\} else \{\
+     vimeo_player.pause();\
+\}\
+</script>\
+
+\b \
+\
+
+\b0 see here,\
+https://github.com/customd/jquery-visible
+\b \
+
+\b0 downloaded\
+jquery.visible.js\
+\
+
+\b \
 \
 \
 \
-VersionB
+\
+\
+\
+VersionB \'97 see C \'97 see F
 \b0 \
 seems to be the same as version F\'97 \
 COMPARE THESE 2 versions sand see wtf.\
@@ -27,7 +77,7 @@ COMPARE THESE 2 versions sand see wtf.\
 \b \
 \
 \
-\cf2 VersionC\
+\cf3 VersionC\cf2 \
 
 \b0 \cf0 feed-text / feed-element\'85definitely not working\
 
@@ -39,7 +89,7 @@ COMPARE THESE 2 versions sand see wtf.\
 \b VersionD
 \b0 \
 doesn\'92t work\
-seems to be a paid service \'93vidyard\'94\
+seems to be a paid service \'93vidyard\'94 \'97 PAID\
 \pard\pardeftab720\sl360\partightenfactor0
 
 \f1 \cf4 \cb5 \expnd0\expndtw0\kerning0
@@ -54,7 +104,7 @@ based on this example:\cf6 \cb1 \
 \b Version E
 \b0 \
 no errors, but doesn\'92t work\'97 videos objects don\'92t even appear\
-seems to be a paid service \'93embedly\'94\
+seems to be a paid service \'93embedly\'94 \'97 PAID\
 \pard\pardeftab720\sl360\partightenfactor0
 
 \f1 \cf4 \cb5 \expnd0\expndtw0\kerning0
@@ -100,7 +150,5 @@ it\'92s using  YouTube API\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0 \cf0 \kerning1\expnd0\expndtw0 \
-\
-\
 \
 }
