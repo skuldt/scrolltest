@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+  <head>
+
+    <!--
+ 
+
+    -->
+
+  </head>
+  <body>
+
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+
+<div data-vimeo-id="156299091" data-vimeo-width="640" id="handstick"></div>
+
+<!-- jquery (remove this line on webflow (webflow alredy load jquery))-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- scroll dedection -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js">
+</script>
+
+<!-- viemo api -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+  // If you want to control the embeds, you'll need to create a Player object.
+  // You can pass either the `<div>` or the `<iframe>` created inside the div.
+  var viemo_player = new Vimeo.Player('handstick');
+  
+  viemo_player.on('play', function() {
+    document.getElementById("videostatus").innerHTML = "play video!";
+  });
+  viemo_player.on('pause', function() {
+    document.getElementById("videostatus").innerHTML = "pause video!";
+  });
+  
+    
+   //When the player is ready, set the volume to 0
+    viemo_player.ready().then(function() {
+        viemo_player.setVolume(0);
+    });
+  
+  /* #########################################
+   WayPoints JS
+   https://github.com/imakewebthings/
+############################################ */
+  $('#handstick').waypoint(
+    function(direction) {
+      if (direction === 'down') {
+        viemo_player.play();
+        document.getElementById("scrollStatus").innerHTML = "<b>video in to view</b> | triggerPoint is: Trigger when then the element is:" + this.options.offset + "from top of window (offset) - the triggerPoint is:" + this.triggerPoint + "px" + "| Waypoint element id:" + this.element.id + "<br>" + direction + ' direction';
+      } else {
+        // document.getElementById("scrollStatus").innerHTML = "out of view scroll top";
+        document.getElementById("scrollStatus").innerHTML = "<b>video in to view</b> | triggerPoint is: Trigger when then the element is:" + this.options.offset + "from top of window (offset) - the triggerPoint is:" + this.triggerPoint + "px" + "| Waypoint element id:" + this.element.id + "<br>" + direction + ' direction';
+      }
+    }, {
+      offset: '30%'
+    });
+</script>
+
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+<p>scroll</p>
+</body>
+</html>
