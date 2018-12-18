@@ -18,6 +18,7 @@
 \b \
 
 \b0 \
+\
 http://imakewebthings.com/waypoints/shortcuts/inview/
 \b \
 
@@ -61,6 +62,44 @@ https://github.com/customd/jquery-visible
 \b0 downloaded\
 jquery.visible.js\
 \
+
+\b \
+\
+
+\b0 this is what i removed, the waypoints stuff:\
+  // If you want to control the embeds, you'll need to create a Player object.\
+  // You can pass either the `<div>` or the `<iframe>` created inside the div.\
+  var viemo_player = new Vimeo.Player('handstick');\
+  \
+  viemo_player.on('play', function() \{\
+    document.getElementById("videostatus").innerHTML = "play video!";\
+  \});\
+  viemo_player.on('pause', function() \{\
+    document.getElementById("videostatus").innerHTML = "pause video!";\
+  \});\
+  \
+    \
+   //When the player is ready, set the volume to 0\
+    viemo_player.ready().then(function() \{\
+        viemo_player.setVolume(0);\
+    \});\
+  \
+  /* #########################################\
+   WayPoints JS\
+   https://github.com/imakewebthings/\
+############################################ */\
+  $('#handstick').waypoint(\
+    function(direction) \{\
+      if (direction === 'down') \{\
+        viemo_player.play();\
+        document.getElementById("scrollStatus").innerHTML = "<b>video in to view</b> | triggerPoint is: Trigger when then the element is:" + this.options.offset + "from top of window (offset) - the triggerPoint is:" + this.triggerPoint + "px" + "| Waypoint element id:" + this.element.id + "<br>" + direction + ' direction';\
+      \} else \{\
+        // document.getElementById("scrollStatus").innerHTML = "out of view scroll top";\
+        document.getElementById("scrollStatus").innerHTML = "<b>video in to view</b> | triggerPoint is: Trigger when then the element is:" + this.options.offset + "from top of window (offset) - the triggerPoint is:" + this.triggerPoint + "px" + "| Waypoint element id:" + this.element.id + "<br>" + direction + ' direction';\
+      \}\
+    \}, \{\
+      offset: '30%'\
+    \});\
 
 \b \
 \
