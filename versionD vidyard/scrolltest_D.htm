@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--FUCK 
+    this needs a PAID SUBSCRIPTION to VIDYARD  
+  
+    was based on this example:
+      https://www.vidyard.com/blog/trigger-video-playback-player-visibility/
+
+-->
+
+</head>
+
+<body>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="feed-text">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+
+  <div id=”video_container”>
+      <script type='text/javascript' id='vidyard_embed_code_uuid' src='http://play.vidyard.com/uuid.js?v=3.1.1&type=inline'></script>
+      <!-- <iframe src="https://player.vimeo.com/video/296728707?autoplay=1&autopause=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+    </div>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://play.vidyard.com/v0/api.js"></script>
+
+<script type="text/javascript">
+  var videos = new Vidyard.players();
+  var playing=0;
+  $(window).on('scroll', function() {
+    if(isElementInViewport($("#video_container")) && (playing==0)) {
+      videos["uuid"].play();
+      playing=1;
+    } else if (!isElementInViewport($("#video_container")) && (playing==1)) {
+      videos["uuid"].pause();
+      playing=0;
+    } 
+  });
+</script>
+
+
+</body>
+</html>
